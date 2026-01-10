@@ -1,9 +1,11 @@
 import express from "express";
+import dotenv from "dotenv"
 import cors from "cors";
 import userRoute from "../Backend/routes/userRoute.js";
 import router from "../Backend/routes/userRoute.js";
 
-const port = 5000;
+dotenv.config()
+const port = process.env.PORT;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -16,4 +18,4 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(port,()=> console.info(`server now running  ${port}`))
+app.listen(port,()=> console.info(`server now running on  ${port}`))
