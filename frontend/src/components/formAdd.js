@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 
-function Add() {
+function FormAdd() {
+  const status ="belum selesai";
   const [tittle, setTittle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -12,6 +13,7 @@ function Add() {
       await axios.post(process.env.REACT_APP_POST, {
         tittle: tittle,
         description: description,
+        status:status
       });
 
       // reset form
@@ -64,4 +66,4 @@ function Add() {
   );
 }
 
-export default Add;
+export default FormAdd;

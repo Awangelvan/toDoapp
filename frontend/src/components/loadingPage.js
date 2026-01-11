@@ -1,18 +1,48 @@
 function LoadingPage (){
 
     return (
-      <div>
-        <div className="container is-flex-column is-half is-centered">
-            <div className="column">
-              <h1>Please Wait For a Moment</h1>
-            </div>
-            <div className="column">
-                <button className="button is-link is-rounded is-loading"></button>
-            </div>
-            <div className="column">
-                <p>sorry for the inconvenience</p>  
-            </div>            
-        </div>        
+      <div className="columns">
+
+      <div className="column is-4">
+        <div className="card">
+          <div className="card-content skeleton-block">
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+          </div>
+          <footer className="level">
+                    <a className="level-item button is-skeleton">done</a>
+                    <a className="level-item button is-skeleton">delete</a>
+                </footer>
+        </div>
+      </div>
+      <div className="column is-4">
+        <div className="card">
+          <div className="card-content skeleton-block">
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+          </div>
+          <footer className="level">
+                    <a className="level-item button is-skeleton">done</a>
+                    <a className="level-item button is-skeleton">delete</a>
+                </footer>
+        </div>
+      </div>
+      <div className="column is-4">
+                <div className="card mb-4">
+                <div className="card-content skeleton-block">
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+            |||||||||||||||||||||||||||
+                </div>
+                <footer className="level">
+                    <a className="level-item card-footer-item is-skeleton">Done</a>
+                    <a className="level-item card-footer-item is-skeleton">Delete</a>
+                </footer>
+                </div>
+                </div>
+      
       </div>
     )
   }

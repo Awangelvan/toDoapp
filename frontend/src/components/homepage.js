@@ -1,5 +1,5 @@
 import TodoCard from "../components/todocard.js";
-import Add from "../components/add.js"
+import FormAdd from "./formAdd.js"
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
           </h1>
 
           {/* Add Todo */}
-          <Add />
+          <FormAdd />
           
           {/* Todo List */}
           <div className="columns is-multiline">

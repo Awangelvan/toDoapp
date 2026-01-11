@@ -5,10 +5,7 @@ const User = db.define("user_table",{
    
     tittle : DataTypes.STRING,
     description : DataTypes.STRING,
-    status : DataTypes.CHAR,
-    priority : DataTypes.ENUM("penting","sedang","gak penting"),
-    due_date : DataTypes.DATE,
-   
+    status : DataTypes.ENUM("selesai","belum selesai"),   
 },{
     freezeTableName : true
 })

@@ -8,11 +8,21 @@ const TodoCard = () => {
     const deleteUser = async(id)=>{
         try {
             await axios.delete(`${process.env.REACT_APP_DELETE}${id}`)
-            console.log("user berhasil dihapus")
         } catch (error) {
             console.log("gagal hapus user")
         }
     };
+
+    const updateUser = async (id,tittle,description)=>{
+        try {
+            await axios.patch(`${process.env.REACT_APP_UPDATE}${id}`,{  
+                    status:"selesai"
+                
+            })
+        } catch (error) {
+            console.error("gagal update user",error.massage)
+        }
+    }
 
     useEffect(()=>{
         const getData =async()=>{
@@ -40,7 +50,7 @@ const TodoCard = () => {
         return (
             <>
             {users.map(user=>(
-                <div className="column is-4">
+                <div key={user.id} className="column is-4">
                 <div className="card mb-4">
                 <div className="card-content">
                     <p className="title is-5">{user.tittle}</p>
@@ -48,7 +58,7 @@ const TodoCard = () => {
                 </div>
 
                 <footer className="card-footer">
-                    <a className="card-footer-item has-text-success">Done</a>
+                    <a className="card-footer-item has-text-success" onClick={()=>updateUser(user.id,user.tittle,user.description)}>Done</a>
                     <a className="card-footer-item has-text-danger" onClick={()=>deleteUser(user.id)}>Delete</a>
                 </footer>
                 </div>
